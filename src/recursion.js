@@ -123,22 +123,14 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
-
-    // if(string[string.length - 1] === string[0]){
-    //     // if (string.length === 0) {
-    //     //     return string;
-    //     return n; 
-    //     }
-    // }
-    // if(string.length - 1 > 0){
-        
-    //     n = string[string.length - 1]
-    //     // string = string.charAt(n)
-    // return reverse(string, n);
-    if (string.length - 1 < 0) {
+    if(string.length <= 1){
         return string;
     }
-    return string[string.length - 1] + reverse(string.slice(string.length));
+    const lastLetter = string[string.length - 1];
+    const firstLetter = string[0];
+    const stringreverse = reverse(string.substring(1, string.length - 1));
+    return lastLetter + stringreverse + firstLetter;
+
 };
 
 
