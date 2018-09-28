@@ -136,6 +136,11 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+    // if(string){
+    //     return true;
+    // } else if(){
+    //     return false;
+    // }
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -149,6 +154,15 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator  or
 // JavaScript's Math object.
 var multiply = function(x, y) {
+
+    if (y == 0){
+        return 0;
+    }
+    if(y > 0){
+        return x + multiply(x, y-1)
+    } else if(y < 0){
+        return -multiply(x, -y);
+    }
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -170,6 +184,16 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+    //check if str1 is equal to str2
+    if(str1.length === 0 && str2.length === 0){
+        return true;
+     //check if str1 is equal to str2   
+    } else if(str1.length === 0 || str2.length === 0){
+        return false;
+    }
+    return compareStr(str1.slice(1), str2.slice(1));
+// use slice
+    
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
